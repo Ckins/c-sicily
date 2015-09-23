@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main() {
     int j = 0;
     int count = 1;
 
-    cout << count/2 << endl;
+    cout << "snake_array" << endl;
     for (i = 1; i <= n; i++) {
         if (i%2 != 0) {
             for (j = i/2; j < n-(i/2);j++) {
@@ -35,7 +36,7 @@ int main() {
 
     for (i = 0;i < n;i++) {
         for (j = 0; j < n; j++) {
-            cout << a[i][j] << "  ";
+            cout << setw(5) << a[i][j];
         }
         cout << endl;
     }
