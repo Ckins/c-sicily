@@ -94,67 +94,6 @@ void operations() {
     rest_head();
 }
 
-// void operationA() {
-//     int count = (*head).count;
-//     string op = (*head).op;
-//     string a = (*head).a;
-//     string b = (*head).b;
-//     if (count > 0 && (*head).op[count-1] == 'A') {
-//         return;
-//     }
-//     moban tmp = moban(b+"", a+"", count+1, op+"A");
-//     if(cut_leaf(tmp)) {
-//         que.push_back(tmp);
-//         rest_head();
-//     }
-//     return;
-// }
-
-// void operationB() {
-
-//     int count = (*head).count;
-//     string op = (*head).op;
-//     if (count > 2 && op[count-1] == 'B' && op[count-2] == 'B' && op[count-3] == 'B') {
-//         return;
-//     }
-//     string a = (*head).a;
-//     string b = (*head).b;
-//     char t1 = a[3];
-//     char t2 = b[3];
-//     for (int i = 3; i > 0; i--)  {
-//         a[i] = a[i-1];
-//         b[i] = b[i-1];
-//     }
-//     a[0] = t1;
-//     b[0] = t2;
-//     moban tmp = moban(a+"", b+"", count+1, op+"B");
-//     if (cut_leaf(tmp)) {
-//         que.push_back(tmp);
-//         rest_head();
-//     }
-// }
-
-// void operationC() {
-
-//     int count = (*head).count;
-//     string op = (*head).op;
-//     if (count > 2 && op[count-1] == 'C' && op[count-2] == 'C' && op[count-3] == 'C') {
-//         return;
-//     }
-
-//     string a = (*head).a;
-//     string b = (*head).b;
-//     char t = a[1];
-//     a[1] = b[1];
-//     b[1] = b[2];
-//     b[2] = a[2];
-//     a[2] = t;
-//     moban tmp = (moban(a+"", b+"", count+1, op+"C")); 
-//     if (cut_leaf(tmp)) {
-//         que.push_back(tmp);
-//         rest_head();
-//     }
-// }
 
 bool isFound() {
     return ((*head).a == tarA && (*head).b == tarB);
@@ -184,19 +123,11 @@ int main() {
         que.push_back(moban("1234", "8765", 0, ""));
         head = que.begin();
         while (!isFound()) {
-            if (isExceed() || head_count > 4000) {
+            if (isExceed()) {
                 cout << "-1" << endl;
                 break;
             }
-
-            //cout << (*head).a << endl;
-            //cout << (*head).b << endl << endl;
             operations();
-            // operationA();
-            // operationB();
-            // operationC();
-            // head_count++;
-            // rest_head();
         }
         if (isFound()) cout << (*head).count << " " << (*head).op << endl;
         cin >> m;
