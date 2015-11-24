@@ -18,6 +18,7 @@ struct point{
 };
 
 void dfs(int x, int y, int i) {
+    cout << i << endl;
     if (flag) return;
     if (i >=  WIDTH * HIGHT - 1) {
         for (int j = 0; j < WIDTH * HIGHT - 1; j++) { 
