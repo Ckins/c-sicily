@@ -112,7 +112,6 @@ void try_move(position last_pos, int steps) {
                     avl++;
                 }
             }
-
             //对可行的下一步进行排序，确定优先级
             select_sort(p, avl);
 
@@ -129,7 +128,6 @@ void try_move(position last_pos, int steps) {
             }
         }
     }
-
 }
 
 //初始化棋盘和路径

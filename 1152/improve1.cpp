@@ -161,15 +161,6 @@ int main() {
 
         while((!my_stack.empty()) && (my_stack.top().step != 29)) {
             try_move();
-            // cout << start;
-            // for (int i = 1; i <= 29; i++) {
-            //     for (int j = 0; j <= 29; j++) {
-            //         if (my_stack.top().route[j] == i) {
-            //             cout << " " << j+1;
-            //         }
-            //     }
-            // }
-            // cout << endl;
         }
 
         if (!my_stack.empty()) {
